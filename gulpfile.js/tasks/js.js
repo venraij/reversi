@@ -12,3 +12,5 @@ return src('js/*.js')
     .pipe(dest(backendPath))
     }
 };
+
+exports.js = fn;
