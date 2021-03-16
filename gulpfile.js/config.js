@@ -3,7 +3,8 @@ module.exports = {
     files: {
         js: [
             'js/**/*.js',
-            'js/*.js'
+            'js/*.js',
+            'js/**/**/*.js'
         ]
     },
     voornaam: 'Nick'
