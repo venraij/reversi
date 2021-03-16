@@ -1,5 +1,5 @@
 module.exports = {
-    localServerProjectPath : '<C:/...pad_naar_server_project_voor_client_bestanden>',
+    localServerProjectPath : 'C:\\Users\\nickv\\source\\repos\\ReversiRestApi\\ReversiRestApiMVC\\wwwroot',
     files: {
         js: [
             'js/**/*.js',
