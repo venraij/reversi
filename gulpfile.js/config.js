@@ -1,5 +1,5 @@
 module.exports = {
-    localServerProjectPath : 'C:/Users/nickv/source/repos/ReversiRestApi/ReversiRestApiMVC/wwwroot/js',
+    localServerProjectPath : 'C:/Users/nickv/source/repos/ReversiMvcApp/ReversiMvcApp/wwwroot/js',
     files: {
         js: [
             'js/**/*.js',
