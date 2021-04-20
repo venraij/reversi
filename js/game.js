@@ -21,10 +21,12 @@ connection.start().then(function () {
         success: function (spel) {
             const parsedSpel = JSON.parse(spel)[0];
             console.log(parsedSpel);
+            let x = 0;
+            let y = 0;
             parsedSpel["Bord"].forEach(row => {
                 row.forEach(cel => {
                     const newCel = document.createElement("div");
-                    newCel.className = "cel";
+                    newCel.className = `cel y-${y} x-${x}`;
                     
                     if (cel !== 0) {
                         const newFiche = document.createElement("div");
@@ -38,9 +40,16 @@ connection.start().then(function () {
                         
                         newCel.appendChild(newFiche)
                     }
-                    
+
+                    x++
+
+                    if (x === 8) {
+                        x = 0;
+                    }
+
                     $(".bord").append(newCel);
                 })
+                y++
             });
         },
         error: function (xhr) {
