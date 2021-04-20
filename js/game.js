@@ -26,7 +26,7 @@ connection.start().then(function () {
             parsedSpel["Bord"].forEach(row => {
                 row.forEach(cel => {
                     const newCel = document.createElement("div");
-                    newCel.className = `cel y-${y} x-${x}`;
+                    newCel.className = `cel y${y} x${x}`;
                     
                     if (cel !== 0) {
                         const newFiche = document.createElement("div");
@@ -51,6 +51,9 @@ connection.start().then(function () {
                 })
                 y++
             });
+            $(".cel").on( "click", function() {                
+                Game.Reversi.doeZet(this.classList[1][1],this.classList[2][1]);
+            })
         },
         error: function (xhr) {
             console.error(xhr.error)
@@ -61,21 +64,21 @@ connection.start().then(function () {
   return console.error(err.toString());
 });
 
-const Game = (function() {
+const Game = (function($) {
     'use strict';
 
-    const Reversi = (function () {
+    const Reversi = (function ($) {
         
-        const doeZet = function () {
-            console.log("doeZet");
+        const doeZet = function (y, x) {
+            $(`.y${y}.x${x}`).append("<div class='fiche wit'></div>");
         }
 
         return {
             doeZet: doeZet
         };
-    })()
+    })($)
 
     return {
         Reversi: Reversi
     }
-})();
+})($);
