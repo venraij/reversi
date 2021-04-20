@@ -51,3 +51,22 @@ connection.start().then(function () {
 })["catch"](function (err) {
   return console.error(err.toString());
 });
+
+const Game = (function() {
+    'use strict';
+
+    const Reversi = (function () {
+        
+        const doeZet = function () {
+            console.log("doeZet");
+        }
+
+        return {
+            doeZet: doeZet
+        };
+    })()
+
+    return {
+        Reversi: Reversi
+    }
+})();
